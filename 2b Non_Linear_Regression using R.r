@@ -1,0 +1,5 @@
+df <- read.csv(file.choose())
+View(df)
+attach(df)
+reg <- nls(Gia ~ Y0 * exp(-(Dien.tich + So.phong) * k), data = df, start = list(k = 0.1, Y0 = 200))
+summary(reg)
